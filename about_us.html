@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Around The Globe - About Us</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      /* Background image with a dark translucent overlay for readability */
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(31, 41, 55, 0.95);
+      padding: 0.8rem 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: color 0.2s, background-color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+      background-color: #374151;
+    }
+
+    /* Content Layout */
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      color: #ffffff;
+    }
+
+    .company-info {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .company-info h1 {
+      font-size: 2.6rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .company-mission {
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #e5e7eb;
+    }
+
+    /* Stats Cards with translucent backdrop */
+    .company-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 1.5rem 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      min-width: 180px;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-card p {
+      color: #4b5563;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Team Section */
+    .team-section {
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-subtitle {
+      color: #d1d5db;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #e5e7eb;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .member-name {
+      font-size: 1.25rem;
+      color: #111827;
+      margin-bottom: 0.25rem;
+    }
+
+    .member-role {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .member-bio {
+      color: #4b5563;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simplified Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+        All Around The Globe
+      </a>
+      <ul class="nav-links">
+        <li><a href="travel_recommendations.html">Home</a></li>
+        <li><a href="about_us.html" class="active">About Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Content -->
+  <main class="about-container">
+    
+    <section class="company-info">
+      <h1>About All Around The Globe</h1>
+      <p class="company-mission">
+        Welcome to All Around The Globe. Where your wildest dreams have yet to be discovered. Plan your next unforgettable adventure with recommendations tailored just for you.
+      </p>
+      <div class="company-stats">
+        <div class="stat-card">
+          <h3>500+</h3>
+          <p>Destinations Covered</p>
+        </div>
+        <div class="stat-card">
+          <h3>100k+</h3>
+          <p>Happy Explorers</p>
+        </div>
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Dedicated Support</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <p class="team-subtitle">The adventurers, planners, and developers behind your journey.</p>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="member-avatar">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="member-name">Eboni Gatson</h3>
+          <p class="member-role">Founder & CEO</p>
+          <p class="member-bio">Veteran, avid traveler and foodie with over 32 countries under her belt.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="member-avatar">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="member-name">Marcus Moore</h3>
+          <p class="member-role">Head of Product</p>
+          <p class="member-bio">Passionate about intuitive user experiences and crafting recommendation algorithms that travelers love.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="member-avatar">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="member-name">Jordin Knighton</h3>
+          <p class="member-role">Lead Travel Curator</p>
+          <p class="member-bio">Local culture specialist ensuring every itinerary is packed with authentic regional insights and safety advice.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
